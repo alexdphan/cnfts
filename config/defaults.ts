@@ -6,11 +6,11 @@
 import { assets } from 'chain-registry';
 import { AssetList, Asset } from '@chain-registry/types';
 
-export const chainName = process.env.NEXT_PUBLIC_CHAIN ?? 'localarabica';
+export const chainName = process.env.NEXT_PUBLIC_CHAIN ?? 'stargaze';
 
-export const chainassets: AssetList = assets.find(
-  (chain) => chain.chain_name === chainName
-) as AssetList;
-export const coin: Asset = chainassets.assets.find(
-  (asset) => asset.base === 'uosmo'
-) as Asset;
+// export const chainassets: AssetList = assets.find(
+//   (chain) => chain.chain_name === chainName
+// ) as AssetList;
+// export const coin: Asset = chainassets.assets.find(
+//   (asset) => asset.base === 'uosmo'
+// ) as Asset;

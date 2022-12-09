@@ -10,7 +10,7 @@ import { ThemeProvider } from '../contexts/theme';
 
 import { SignerOptions } from '@cosmos-kit/core';
 import { chains, assets } from 'chain-registry';
-import AddNetworkKeplr from '../config/keplr_arabica';
+import AddNetworkKeplr from '../config/localarabica';
 
 export const ARABICA_PARAMS = {
   chainId: 'arabica-2',
@@ -18,8 +18,6 @@ export const ARABICA_PARAMS = {
   rpc: 'https://rpc.limani.celestia-devops.dev',
   rest: 'https://limani.celestia-devops.dev',
 };
-
-      <AddNetworkKeplr params={ARABICA_PARAMS} />
 
 
 function CreateCosmosApp({ Component, pageProps }: AppProps) {
@@ -31,12 +29,14 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
 
   return (
     <WalletProvider
-      chains={chains, }
+      chains={chains}
       assetLists={assets}
-      wallets={[...keplrWallets, ...cosmostationWallets, ...leapWallets]}
+      // wallets={[...keplrWallets, ...cosmostationWallets, ...leapWallets]}
+      wallets={keplrWallets}
       signerOptions={signerOptions}
       walletModal={TailwindModal}
     >
+      <AddNetworkKeplr params={ARABICA_PARAMS} />
       <ThemeProvider>
         <div className="min-h-screen text-black bg-white dark:bg-gray-bg dark:text-white">
           <Component {...pageProps} />
@@ -47,3 +47,5 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
 }
 
 export default CreateCosmosApp;
+
+// so we have arabica connected (works directly with keplr), need to figure out how to integrate it with useWallet hook in CosmosKit instead https://docs.cosmoskit.com/wallet-provider#adding-localnet-and-testnets

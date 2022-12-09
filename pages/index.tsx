@@ -3,7 +3,7 @@ import { Product, Dependency, WalletSection } from '../components';
 import { dependencies, products } from '../config';
 import { useTheme } from '../contexts/theme';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
-import AddNetworkKeplr from '../config/keplr_arabica';
+import AddNetworkKeplr from '../config/localarabica';
 
 export const ARABICA_PARAMS = {
   chainId: 'arabica-2',
