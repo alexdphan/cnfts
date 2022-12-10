@@ -11,20 +11,42 @@ import { ThemeProvider } from '../contexts/theme';
 import { SignerOptions } from '@cosmos-kit/core';
 import { chains, assets } from 'chain-registry';
 import AddNetworkKeplr from '../config/localarabica';
+import { getSigningCosmosClientOptions } from 'osmojs';
+import { GasPrice } from '@cosmjs/stargate';
 
-export const ARABICA_PARAMS = {
+// export const ARABICA_PARAMS = {
+//   chainId: 'arabica-2',
+//   chainName: 'Arabica Devnet',
+//   rpc: 'https://rpc.limani.celestia-devops.dev',
+//   rest: 'https://limani.celestia-devops.dev',
+// };
+
+interface Chain {
   chainId: 'arabica-2',
   chainName: 'Arabica Devnet',
   rpc: 'https://rpc.limani.celestia-devops.dev',
   rest: 'https://limani.celestia-devops.dev',
-};
+}; // something like this... but how to get it to work with the wallet provider? maybe include with localarabica.ts? not sure what with chain_name: 'localosmosis' is for
 
+// the comment with chain_name: 'localosmosis' is for the signerOptions, which is a function that returns the signingCosmwasm options for a given chain. So you can use it to set the gas price for a given chain. In this case, we're setting the gas price for the localosmosis chain to 0.0025uosmo.
 
-function CreateCosmosApp({ Component, pageProps }: AppProps) {
+function App({ Component, pageProps }: AppProps) {
+ 
+  const localosmosis: Chain = {...}; // with chain_name: 'localosmosis'
+  const localosmosisAssets: AssetList = {...}; // with chain_name: 'localosmosis'
+ 
   const signerOptions: SignerOptions = {
-    // signingStargate: (_chain: Chain) => {
-    //   return getSigningCosmosClientOptions();
-    // }
+    signingStargate: (_chain: Chain) => {
+      return getSigningCosmosClientOptions();
+    },
+    signingCosmwasm: (chain: Chain) => {
+      switch (chain.chain_name) {
+        case 'localosmosis':
+          return {
+            gasPrice: GasPrice.fromString('0.0025uosmo')
+          };
+      }
+    }
   };
 
   return (
