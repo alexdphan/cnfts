@@ -3,7 +3,7 @@ import { Product, Dependency, WalletSection } from '../components';
 import { dependencies, products } from '../config';
 import { useTheme } from '../contexts/theme';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
-import AddNetworkKeplr from '../config/localarabica';
+import AddNetworkKeplr from '../components/localarabica';
 
 export const ARABICA_PARAMS = {
   chainId: 'arabica-2',
@@ -46,8 +46,9 @@ export default function Home() {
         </h1>
       </div>
       {/* <WalletSection chainName={chainName} /> */}
-      <WalletSection />
-      {/* <AddNetworkKeplr params={ARABICA_PARAMS} /> */}
+      <WalletSection /> 
+      <AddNetworkKeplr params={ARABICA_PARAMS} />
+      
       <div className="grid gap-8 mb-14 md:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
           <Product key={product.title} {...product}></Product>

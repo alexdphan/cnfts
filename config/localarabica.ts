@@ -2,20 +2,20 @@ import { Chain, AssetList } from '@chain-registry/types';
 
 export const localosmosis: Chain = {
   $schema: '../../chain.schema.json',
-  chain_name: 'localosmosis',
+  chain_name: 'celeswasm',
   status: 'live',
-  network_type: 'testnet',
-  pretty_name: 'Osmosis Localnet',
-  chain_id: 'osmosis-local-1',
-  bech32_prefix: 'osmo',
-  daemon_name: 'osmosisd',
-  node_home: '$HOME/.osmosisd',
+  network_type: 'devnet',
+  pretty_name: 'Celeswasm Testnet',
+  chain_id: 'arabica-2',
+  bech32_prefix: 'celestia',
+  daemon_name: 'wasmd',
+  node_home: '$HOME/.wasmd',
   key_algos: ['secp256k1'],
   slip44: 118,
   fees: {
     fee_tokens: [
       {
-        denom: 'uosmo',
+        denom: 'uwasm',
         fixed_min_gas_price: 0,
         low_gas_price: 0,
         average_gas_price: 0.025,
@@ -26,32 +26,32 @@ export const localosmosis: Chain = {
   staking: {
     staking_tokens: [
       {
-        denom: 'uosmo',
+        denom: 'uwasm',
       },
     ],
   },
-  codebase: {
-    git_repo: 'https://github.com/osmosis-labs/osmosis',
-    recommended_version: 'v11.0.0',
-    compatible_versions: ['v11.0.0'],
-    cosmos_sdk_version: '0.45',
-    tendermint_version: '0.34',
-    cosmwasm_version: '0.24',
-    cosmwasm_enabled: true,
-    genesis: {
-      genesis_url:
-        'https://github.com/osmosis-labs/networks/raw/main/osmo-test-4/genesis.tar.bz2',
-    },
-  },
+  // codebase: {
+  //   git_repo: 'https://github.com/osmosis-labs/osmosis',
+  //   recommended_version: 'v11.0.0',
+  //   compatible_versions: ['v11.0.0'],
+  //   cosmos_sdk_version: '0.45',
+  //   tendermint_version: '0.34',
+  //   cosmwasm_version: '0.24',
+  //   cosmwasm_enabled: true,
+  //   genesis: {
+  //     genesis_url:
+  //       'https://github.com/osmosis-labs/networks/raw/main/osmo-test-4/genesis.tar.bz2',
+  //   },
+  // },
   apis: {
     rpc: [
       {
-        address: 'http://localhost:3535',
+        address: 'https://rpc.limani.celestia-devops.dev',
       },
     ],
     rest: [
       {
-        address: 'http://localhost:35357',
+        address: 'https://limani.celestia-devops.dev',
       },
     ],
     grpc: [],
@@ -59,7 +59,8 @@ export const localosmosis: Chain = {
   logo_URIs: {
     png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmosis-chain-logo.png',
   },
-  keywords: ['dex', 'testnet'],
+  // keywords: ['dex', 'testnet'],
+  keywords: ['dev', 'devnet'],
 };
 
 export const localosmosisAssets: AssetList = {
