@@ -6,15 +6,15 @@ import codegen from '@cosmwasm/ts-codegen';
 codegen({
   contracts: [
     {
-      name: 'cnft721',
-      dir: './path/to/sg721/schema',
+      name: 'cnft721-base',
+      dir: '../contracts/schema',
     },
-    {
-      name: 'Minter',
-      dir: './path/to/Minter/schema',
-    },
+    // {
+    //   name: 'Minter',
+    //   dir: './path/to/Minter/schema',
+    // },
   ],
-  outPath: './path/to/code/src/',
+  outPath: '../src/codegen',
 
   // options are completely optional ;)
   options: {
@@ -46,3 +46,29 @@ codegen({
 }).then(() => {
   console.log('✨ all done!');
 });
+
+
+// npm run codegen                                                         ─╯
+
+// > @cosmology/tailwindcss@1.6.3 codegen
+// > cross-env NODE_ENV=development babel-node scripts/codegen.ts
+
+// (node:5999) Warning: To load an ES module, set "type": "module" in the package.json or use the .mjs extension.
+// (Use `node --trace-warnings ...` to show where the warning was created)
+// /Users/alexanderphan_1/Developer/cnfts-fe/scripts/codegen.ts:1
+// import codegen from '@cosmwasm/ts-codegen';
+// ^^^^^^
+
+// SyntaxError: Cannot use import statement outside a module
+//     at internalCompileFunction (node:internal/vm:74:18)
+//     at wrapSafe (node:internal/modules/cjs/loader:1128:20)
+//     at Module._compile (node:internal/modules/cjs/loader:1169:27)
+//     at Module._extensions..js (node:internal/modules/cjs/loader:1259:10)
+//     at Object.newLoader [as .js] (/Users/alexanderphan_1/Developer/cnfts-fe/node_modules/pirates/lib/index.js:141:7)
+//     at Module.load (node:internal/modules/cjs/loader:1068:32)
+//     at Module._load (node:internal/modules/cjs/loader:909:12)
+//     at Function.executeUserEntryPoint [as runMain] (node:internal/modules/run_main:82:12)
+//     at Object.<anonymous> (/Users/alexanderphan_1/Developer/cnfts-fe/node_modules/@babel/node/lib/_babel-node.js:146:21)
+//     at Module._compile (node:internal/modules/cjs/loader:1205:14)
+
+// Node.js v19.1.0
