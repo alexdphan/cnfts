@@ -58,3 +58,6 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
 }
 
 export default CreateCosmosApp;
+// not codebase, peers
+// use rpcs, rest, more on rpcs
+// provide slip, fees, staking, vector

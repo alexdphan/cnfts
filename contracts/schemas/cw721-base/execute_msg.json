@@ -60,7 +60,7 @@
       "additionalProperties": false
     },
     {
-      "description": "Allows operator to transfer / send the token from the owner's account. If expiration is set, then this allowance has a time/height limit",
+      "description": "Approve, Revoke, ApproveAll, RevokeAll: Giving rights to another account to transfer/send an nft that is held by your account Allows operator to transfer / send the token from the owner's account. If expiration is set, then this allowance has a time/height limit",
       "type": "object",
       "required": [
         "approve"
@@ -297,7 +297,7 @@
       ],
       "properties": {
         "extension": {
-          "description": "Any custom extension used by this contract",
+          "description": "Any custom extension used by this contract NFT creators may want to store their NFT metadata on-chain so other contracts are able to interact with it. Store any data on chain you wish, using a generic extension: T.",
           "anyOf": [
             {
               "$ref": "#/definitions/Empty"
@@ -316,7 +316,7 @@
           "type": "string"
         },
         "token_uri": {
-          "description": "Universal resource identifier for this NFT Should point to a JSON file that conforms to the ERC721 Metadata JSON Schema",
+          "description": "Universal resource identifier for this NFT Should point to a JSON file that conforms to the ERC721 Metadata JSON Schema, optional to store metadata here (off-chain) (ex: IPFS, Sia, Arweave, etc)",
           "type": [
             "string",
             "null"
