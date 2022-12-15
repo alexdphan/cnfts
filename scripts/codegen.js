@@ -25,7 +25,7 @@ codegen({
       //   dir: './path/to/Minter/schema',
       // },
     ],
-    outPath: './ts/src',
+    outPath,
 
     // options are completely optional ;)
     options: {
