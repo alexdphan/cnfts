@@ -59,4 +59,10 @@ codegen({
     console.log('✨ all done!');
   });
 
-  // FINALLY ;D
+// FINALLY ;D
+
+// For example, if you are using Node.js v12, you can use the node command to run JavaScript code that uses the syntax and features that are supported by Node.js v12.
+
+// The babel-node command is typically used to run JavaScript code that uses modern language features and syntax that are not natively supported by the runtime you are using. For example, if you are using Node.js v12, but you want to use the import and export statements to import and export modules, you can use the babel-node command to transpile your code and use the import and export statements.
+
+// In general, you should use the node command to run JavaScript code that is written using the syntax and features that are supported by the runtime you are using, and you should use the babel-node command to run JavaScript code that uses modern language features and syntax that are not supported by the runtime you are using.
