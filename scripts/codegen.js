@@ -51,7 +51,7 @@ codegen({
         enabled: false,
       },
       messageComposer: {
-        enabled: false,
+        enabled: true,
       },
     },
   })
