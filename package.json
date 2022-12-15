@@ -2,13 +2,13 @@
   "name": "@cosmology/tailwindcss",
   "version": "1.6.3",
   "private": true,
-  "type": "module",
+
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "cross-env NODE_ENV=development babel-node scripts/codegen.js"
+    "codegen": "node scripts/codegen.js"
   },
   "dependencies": {
     "@cosmjs/cosmwasm-stargate": "0.29.4",
