@@ -41,18 +41,15 @@ export default function Home() {
         <h1 className="mb-3 text-3xl font-bold text-transparent sm:text-4xl md:text-8xl bg-gradient-to-r bg-clip-text from-pink-500 via-fuchsia-500 to-rose-500">
           cNFTs
         </h1>
-        <h1 className="text-2xl font-bold sm:text-3xl md:text-3xl">
+        <h1 className="mb-3 text-2xl font-bold sm:text-3xl md:text-3xl">
           Celestia's&nbsp;
           <span className="text-purple-500">NFT Minter</span>
         </h1>
-        <h1 className="mb-3 text-xl text-white sm:text-3xl md:text-3xl">
+        <h1 className="mb-3 text-white text-md sm:text-lg md:text-xl">
           Simply add your assets link, name, and description, then press "Mint"
         </h1>
       </div>
-      {/* <WalletSection chainName={chainName} /> */}
       <WalletSection />
-      {/* <AddNetworkKeplr params={ARABICA_PARAMS} /> */}
-
       <div className="grid gap-8 mb-14 md:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
           <Product key={product.title} {...product}></Product>
@@ -67,7 +64,7 @@ export default function Home() {
         <span className="flex flex-row items-center space-x-2">
           <p>Built with</p>
           <a
-            href="https://cosmology.tech/"
+            href="https://celestia.org/"
             target="_blank"
             rel="noopener noreferrer"
           >

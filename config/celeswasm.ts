@@ -56,9 +56,10 @@ export const celeswasm: Chain = {
     ],
     grpc: [],
   },
-  // logo_URIs: {
-  //   png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmosis-chain-logo.png',
-  // },
+  logo_URIs: {
+    png: '../public/celestia.png',
+    svg: '../public/celestia.svg',
+  },
   // keywords: ['dex', 'testnet'],
   keywords: ['dev', 'devnet'],
 };
@@ -85,10 +86,10 @@ export const celeswasmAssets: AssetList = {
       name: 'Celeswasm',
       display: 'wasm',
       symbol: 'UWASM',
-      // logo_URIs: {
-      //   png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.png',
-      //   svg: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmo.svg',
-      // },
+      logo_URIs: {
+        png: 'https://raw.githubusercontent.com/alexdphan/chain-registry/master/celeswasm/images/wasm.png',
+        svg: '../public/celestia.svg',
+      },
       // coingecko_id: 'osmosis',
       // keywords: ['dex', 'staking'],
       coingecko_id: 'celeswasm',
@@ -109,10 +110,10 @@ export const celeswasmAssets: AssetList = {
     //   name: 'Ion',
     //   display: 'ion',
     //   symbol: 'ION',
-    //   // logo_URIs: {
-    //   //   png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.png',
-    //   //   svg: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.svg',
-    //   // },
+      // logo_URIs: {
+      //   png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.png',
+      //   svg: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.svg',
+      // },
     //   coingecko_id: 'wasm',
     //   keywords: ['devcoin'],
     // },
