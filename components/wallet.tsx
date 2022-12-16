@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { MouseEventHandler, useEffect, useMemo } from 'react'
-import { ChainCard } from '../components'
-import { Address } from './react/views'
+import { MouseEventHandler, useEffect, useMemo } from 'react';
+import { ChainCard } from '../components';
+import { Address } from './react/views';
 import {
   ArrowPathIcon,
   ArrowDownTrayIcon,
   WalletIcon,
-} from '@heroicons/react/24/outline'
-import { useWallet } from '@cosmos-kit/react'
-import { WalletStatus } from '@cosmos-kit/core'
+} from '@heroicons/react/24/outline';
+import { useWallet } from '@cosmos-kit/react';
+import { WalletStatus } from '@cosmos-kit/core';
 import { chainName } from '../config';
 
 const buttons = {
@@ -36,7 +36,7 @@ const buttons = {
 }
 
 export const WalletSection = () => {
-  const walletManager = useWallet()
+  const walletManager = useWallet();
   const {
     connect,
     openView,
@@ -46,7 +46,7 @@ export const WalletSection = () => {
     currentChainName,
     currentChainRecord,
     getChainLogo,
-    setCurrentChain
+    setCurrentChain,
   } = walletManager;
 
   useEffect(() => {
@@ -57,12 +57,12 @@ export const WalletSection = () => {
     chainName: currentChainName,
     label: currentChainRecord?.chain.pretty_name,
     value: currentChainName,
-    icon: getChainLogo(currentChainName)
-  }
+    icon: getChainLogo(currentChainName),
+  };
 
   useEffect(() => {
-    setCurrentChain(chainName)
-  }, [setCurrentChain])
+    setCurrentChain(chainName);
+  }, [setCurrentChain]);
 
   // Events
   const onClickConnect: MouseEventHandler = async (e) => {
@@ -71,9 +71,9 @@ export const WalletSection = () => {
   };
 
   const onClickOpenView: MouseEventHandler = (e) => {
-    e.preventDefault()
-    openView()
-  }
+    e.preventDefault();
+    openView();
+  };
 
   const _renderConnectButton = useMemo(() => {
     // Spinner
@@ -101,18 +101,18 @@ export const WalletSection = () => {
             ></path>
           </svg>
         </button>
-      )
+      );
     }
 
-    let onClick
+    let onClick;
     if (
       walletStatus === WalletStatus.Disconnected ||
       walletStatus === WalletStatus.Rejected
     )
-      onClick = onClickConnect
-    else onClick = onClickOpenView
+      onClick = onClickConnect;
+    else onClick = onClickOpenView;
 
-    const buttonData = buttons[walletStatus]
+    const buttonData = buttons[walletStatus];
 
     return (
       <button
@@ -122,8 +122,8 @@ export const WalletSection = () => {
         <buttonData.icon className="flex-shrink-0 w-5 h-5 mr-2 text-white" />
         {buttonData.title}
       </button>
-    )
-  }, [onClickConnect, onClickOpenView, walletStatus])
+    );
+  }, [onClickConnect, onClickOpenView, walletStatus]);
 
   return (
     <div className="w-full max-w-sm pt-12 pb-16 mx-auto">
@@ -156,5 +156,5 @@ export const WalletSection = () => {
         </div>
       </div>
     </div>
-  )
+  );
 }

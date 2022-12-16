@@ -3,16 +3,18 @@ import { Product, Dependency, WalletSection } from '../components';
 import { dependencies, products } from '../config';
 import { useTheme } from '../contexts/theme';
 import { MoonIcon, SunIcon } from '@heroicons/react/24/outline';
+
 // import AddNetworkKeplr from '../components/localarabica';
 
-export const ARABICA_PARAMS = {
-  chainId: 'arabica-2',
-  chainName: 'Arabica Devnet',
-  rpc: 'https://rpc.limani.celestia-devops.dev',
-  rest: 'https://limani.celestia-devops.dev',
-};
+// export const ARABICA_PARAMS = {
+//   chainId: 'arabica-2',
+//   chainName: 'Arabica Devnet',
+//   rpc: 'https://rpc.limani.celestia-devops.dev',
+//   rest: 'https://limani.celestia-devops.dev',
+// };
+
 export default function Home() {
-  const chainName = process.env.NEXT_PUBLIC_CHAIN ?? 'stargaze';
+  const chainName = process.env.NEXT_PUBLIC_CHAIN ?? 'cosmwasmtestnet';
   const { theme, toggleTheme } = useTheme();
 
   return (
@@ -36,6 +38,7 @@ export default function Home() {
             <SunIcon className="w-6 h-6" />
           )}
         </button>
+        <WalletSection />
       </div>
       <div className="text-center">
         <h1 className="mb-3 text-3xl font-bold text-transparent sm:text-4xl md:text-8xl bg-gradient-to-r bg-clip-text from-pink-500 via-fuchsia-500 to-rose-500">
@@ -49,7 +52,6 @@ export default function Home() {
           Simply add your assets link, name, and description, then press "Mint"
         </h1>
       </div>
-      <WalletSection />
       <div className="grid gap-8 mb-14 md:grid-cols-2 lg:grid-cols-3">
         {products.map((product) => (
           <Product key={product.title} {...product}></Product>

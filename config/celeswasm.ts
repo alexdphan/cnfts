@@ -58,7 +58,7 @@ export const celeswasm: Chain = {
   },
   logo_URIs: {
     png: '../public/celestia.png',
-    svg: '../public/celestia.svg',
+    svg: 'https://raw.githubusercontent.com/alexdphan/cnfts-fe/main/public/Celestia.svg',
   },
   // keywords: ['dex', 'testnet'],
   keywords: ['dev', 'devnet'],
@@ -87,8 +87,8 @@ export const celeswasmAssets: AssetList = {
       display: 'wasm',
       symbol: 'UWASM',
       logo_URIs: {
-        png: 'https://raw.githubusercontent.com/alexdphan/chain-registry/master/celeswasm/images/wasm.png',
-        svg: '../public/celestia.svg',
+        png: '../public/celestia.png',
+        svg: 'https://raw.githubusercontent.com/alexdphan/cnfts-fe/main/public/Celestia.svg',
       },
       // coingecko_id: 'osmosis',
       // keywords: ['dex', 'staking'],
@@ -110,12 +110,19 @@ export const celeswasmAssets: AssetList = {
     //   name: 'Ion',
     //   display: 'ion',
     //   symbol: 'ION',
-      // logo_URIs: {
-      //   png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.png',
-      //   svg: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.svg',
-      // },
+    // logo_URIs: {
+    //   png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.png',
+    //   svg: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/ion.svg',
+    // },
     //   coingecko_id: 'wasm',
     //   keywords: ['devcoin'],
     // },
   ],
 };
+
+// not sure if necessary since you are using cosmwasm testnet
+// save in case you need to use it
+
+// // not codebase, peers
+// // use rpcs, rest, more on rpcs
+// // provide slip, fees, staking, vector
