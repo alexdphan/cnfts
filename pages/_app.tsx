@@ -49,7 +49,7 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
       }}
     >
       <ThemeProvider>
-        <div className="min-h-screen text-black bg-white dark:bg-gray-bg dark:text-white">
+        <div className="min-h-screen text-black bg-white dark:bg-black dark:text-white">
           <Component {...pageProps} />
         </div>
       </ThemeProvider>
