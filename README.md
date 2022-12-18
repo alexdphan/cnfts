@@ -74,4 +74,3 @@ Code built with the help of these related projects:
 * [@osmonauts/telescope](https://github.com/osmosis-labs/telescope) a "babel for the Cosmos", Telescope is a TypeScript Transpiler for Cosmos Protobufs.
 * [chain-registry](https://github.com/cosmology-tech/chain-registry) Cosmos chain registry and chain info.
 * [cosmos-kit](https://github.com/cosmology-tech/cosmos-kit) A wallet connector for the Cosmos.
-# cnfts-fe

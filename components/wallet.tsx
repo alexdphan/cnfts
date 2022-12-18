@@ -1,15 +1,15 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 
-import { MouseEventHandler, useEffect, useMemo } from 'react';
-import { ChainCard } from '../components';
-import { Address } from './react/views';
+import { MouseEventHandler, useEffect, useMemo } from 'react'
+import { ChainCard } from '../components'
+import { Address } from './react/views'
 import {
   ArrowPathIcon,
   ArrowDownTrayIcon,
   WalletIcon,
-} from '@heroicons/react/24/outline';
-import { useWallet } from '@cosmos-kit/react';
-import { WalletStatus } from '@cosmos-kit/core';
+} from '@heroicons/react/24/outline'
+import { useWallet } from '@cosmos-kit/react'
+import { WalletStatus } from '@cosmos-kit/core'
 import { chainName } from '../config';
 
 const buttons = {
@@ -36,7 +36,7 @@ const buttons = {
 }
 
 export const WalletSection = () => {
-  const walletManager = useWallet();
+  const walletManager = useWallet()
   const {
     connect,
     openView,
@@ -46,7 +46,7 @@ export const WalletSection = () => {
     currentChainName,
     currentChainRecord,
     getChainLogo,
-    setCurrentChain,
+    setCurrentChain
   } = walletManager;
 
   useEffect(() => {
@@ -57,12 +57,12 @@ export const WalletSection = () => {
     chainName: currentChainName,
     label: currentChainRecord?.chain.pretty_name,
     value: currentChainName,
-    icon: getChainLogo(currentChainName),
-  };
+    icon: getChainLogo(currentChainName)
+  }
 
   useEffect(() => {
-    setCurrentChain(chainName);
-  }, [setCurrentChain]);
+    setCurrentChain(chainName)
+  }, [setCurrentChain])
 
   // Events
   const onClickConnect: MouseEventHandler = async (e) => {
@@ -71,9 +71,9 @@ export const WalletSection = () => {
   };
 
   const onClickOpenView: MouseEventHandler = (e) => {
-    e.preventDefault();
-    openView();
-  };
+    e.preventDefault()
+    openView()
+  }
 
   const _renderConnectButton = useMemo(() => {
     // Spinner
@@ -101,60 +101,61 @@ export const WalletSection = () => {
             ></path>
           </svg>
         </button>
-      );
+      )
     }
 
-    let onClick;
+    let onClick
     if (
       walletStatus === WalletStatus.Disconnected ||
       walletStatus === WalletStatus.Rejected
     )
-      onClick = onClickConnect;
-    else onClick = onClickOpenView;
+      onClick = onClickConnect
+    else onClick = onClickOpenView
 
-    const buttonData = buttons[walletStatus];
+    const buttonData = buttons[walletStatus]
 
     return (
       <button
-        className="rounded-lg bg-purple-damp w-full hover:bg-purple-damp/75 inline-flex justify-center items-center py-2.5 font-medium text-white"
+        className="rounded-lg bg-purple-700 w-full hover:bg-purple-600 inline-flex justify-center items-center py-2.5 font-medium text-white"
         onClick={onClick}
       >
         <buttonData.icon className="flex-shrink-0 w-5 h-5 mr-2 text-white" />
         {buttonData.title}
       </button>
-    );
-  }, [onClickConnect, onClickOpenView, walletStatus]);
+    )
+  }, [onClickConnect, onClickOpenView, walletStatus])
 
   return (
-    <div className="w-full max-w-sm pt-12 pb-16 mx-auto">
-      <div className="grid grid-cols-1 gap-4">
-        {chainName && (
-          <div className="mb-4">
-            <ChainCard
-              prettyName={chain?.label || chainName}
-              icon={chain?.icon}
-            />
+    <div className="w-full">
+      <div className="px-6">
+        <div className="flex flex-row items-center justify-center h-12 mb-2 border rounded-lg w-60 border-black/10 dark:border-white/10">
+          <div className="w-full max-w-[52] md:max-w-[64]">
+            {_renderConnectButton}
           </div>
-        )}
-        <div className="px-6">
-          <div className="flex flex-col items-center justify-center px-4 py-6 mb-2 bg-white border rounded-lg border-black/10 dark:border-white/10 dark:bg-gray-lightbg md:py-12">
-            <div>
-              {username && (
-                <div className="flex flex-row items-center mx-auto space-x-2">
-                  <div className="w-8 h-8 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></div>
-                  <p className="mt-2 mb-2 text-lg font-medium text-black dark:text-white">
-                    {username}
-                  </p>
-                </div>
-              )}
-            </div>
-            {address ? <Address>{address}</Address> : <></>}
-            <div className="w-full max-w-[52] md:max-w-[64]">
-              {_renderConnectButton}
-            </div>
+          <div>
+            {username && (
+              <div className="flex flex-row items-center mx-auto space-x-2">
+                <div className="w-8 h-8 mx-auto rounded-full bg-gradient-to-r from-purple-500 to-blue-500"></div>
+                <p className="mt-2 mb-2 text-lg font-medium text-black dark:text-white">
+                  {username}
+                </p>
+              </div>
+            )}
           </div>
+          {address ? <Address>{address}</Address> : <></>}
         </div>
       </div>
     </div>
   );
 }
+
+
+  //  <div className="grid grid-cols-1 gap-4">
+  //       {chainName && (
+  //         <div className="mb-4">
+  //           <ChainCard
+  //             prettyName={chain?.label || chainName}
+  //             icon={chain?.icon}
+  //           />
+  //         </div>
+  //       )}
