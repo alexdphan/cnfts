@@ -21,7 +21,7 @@ export const Address = ({ children: address }: { children: string }) => {
   const [copied, setCopied] = useState<boolean>(false);
   return (
     <button
-      className="inline-flex items-center justify-center px-6 py-1 mx-4 mb-4 space-x-2 text-sm text-gray-500 bg-white border rounded-full dark:text-white/75 dark:bg-gray-lightbg border-black/10 dark:border-white/10 hover:bg-zinc-200 dark:hover:bg-white/10 hover:border-zinc-200 dark:hover:border-white/10"
+      className="inline-flex items-center justify-center px-6 space-x-2 text-sm text-gray-500 bg-white border rounded-md dark:text-white/75 dark:bg-gray-lightbg border-black/10 dark:border-white/10 hover:bg-zinc-200 dark:hover:bg-white/10 hover:border-zinc-200 dark:hover:border-white/10"
       onClick={() => {
         copyToClipboard(address);
         setCopied(true);
@@ -93,7 +93,7 @@ export const Connected = ({
         </div>
         <Address>{currentWallet?.address || ''}</Address>
         <button
-          className="rounded-lg bg-purple-damp hover:bg-purple-damp/75 inline-flex justify-center items-center py-2.5 font-medium text-white"
+          className="rounded-lg bg-purple-damp hover:bg-purple-damp/75 inline-flex justify-center items-center py-2.5 font-medium text-white mt-4"
           onClick={() => {
             disconnect();
             onClose();
