@@ -6,8 +6,12 @@
 
 import * as _0 from "./Cnfts.types";
 import * as _1 from "./Cnfts.client";
+import * as _2 from "./Cnfts.react-query";
+import * as _3 from "./Cnfts.recoil";
 export namespace contracts {
   export const Cnfts = { ..._0,
-    ..._1
+    ..._1,
+    ..._2,
+    ..._3
   };
 }

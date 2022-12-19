@@ -7,14 +7,14 @@ const pkg = require('rimraf');
 const { sync: rimraf } = pkg;
 
 const contractDir = join(__dirname, '../contracts');
-const outPath = join(__dirname, '../codegen');
+const outPath = join(__dirname, '../src/codegen');
 rimraf(outPath);
 
 codegen({
-      contracts: [
-      {
-        name: 'cnfts',
-        dir: join(contractDir, 'schemas/cw721-base'),
+  contracts: [
+    {
+      name: 'cnfts',
+      dir: join(contractDir, 'schemas/cw721-base'),
     },
   ],
   outPath,
@@ -28,6 +28,17 @@ codegen({
       enabled: true,
     },
     client: {
+      enabled: true,
+    },
+    reactQuery: {
+      enabled: true,
+      optionalClient: true,
+      version: 'v4',
+      mutations: true,
+      queryKeys: true,
+      queryFactory: true,
+    },
+    recoil: {
       enabled: true,
     },
     messageComposer: {

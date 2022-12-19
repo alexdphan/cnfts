@@ -8,6 +8,8 @@ export default function Home() {
   const chainName = process.env.NEXT_PUBLIC_CHAIN ?? 'stargaze';
   const { theme, toggleTheme } = useTheme();
 
+  const contractAddress = "something" // insert contract address here
+
   return (
     <div className="max-w-5xl py-10 mx-6 lg:mx-auto">
       <div className="flex flex-row justify-end mb-24">
