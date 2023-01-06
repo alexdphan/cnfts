@@ -5,3 +5,11 @@ const nextConfig = {
 }
 
 module.exports = nextConfig
+// module.exports = nextConfig ,{
+//   plugins: {
+//     'postcss-import': {},
+//     'tailwindcss/nesting': {},
+//     tailwindcss: {},
+//     autoprefixer: {},
+//   },
+// };

@@ -18,6 +18,10 @@ import { Chain } from '@chain-registry/types';
 import { Montserrat, Quantico } from '@next/font/google';
 
 import Navbar from '../components/navbar';
+import 'xtendui/src/mousefollow';
+import 'xtendui';
+
+import MouseFollow from '../components/mousefollow';
 
 const inter = Montserrat({
   subsets: ['latin'],
@@ -47,45 +51,32 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <main className={courier.className}>
-        <WalletProvider
-          chains={chains}
-          assetLists={assets}
-          wallets={[...keplrWallets, ...cosmostationWallets, ...leapWallets]}
-          signerOptions={signerOptions}
-          walletModal={TailwindModal}
-          endpointOptions={{
-            cosmwasmtestnet: {
-              rpc: ['https://rpc.malaga-420.cosmwasm.com/'],
-            },
-          }}
-        >
-          {/* Navbar needs to be inside wallet and theme provider for it to work */}
-          <ThemeProvider>
-            <Navbar />
-            <div className="min-h-screen text-black bg-clight dark:bg-black dark:text-white ">
-              <Component {...pageProps} />
-            </div>
-          </ThemeProvider>
-        </WalletProvider>
-      </main>
+      <div>
+        <main className={courier.className}>
+          <WalletProvider
+            chains={chains}
+            assetLists={assets}
+            wallets={[...keplrWallets, ...cosmostationWallets, ...leapWallets]}
+            signerOptions={signerOptions}
+            walletModal={TailwindModal}
+            endpointOptions={{
+              cosmwasmtestnet: {
+                rpc: ['https://rpc.malaga-420.cosmwasm.com/'],
+              },
+            }}
+          >
+            {/* Navbar needs to be inside wallet and theme provider for it to work */}
+            <ThemeProvider>
+              <MouseFollow>
+                <Navbar />
+                <Component {...pageProps} />
+              </MouseFollow>
+            </ThemeProvider>
+          </WalletProvider>
+        </main>
+      </div>
     </>
   );
 }
 
 export default CreateCosmosApp;
-
-// enter button // done
-// move wallet to navbar, connect wallet button // done 
-// make them switch work // done
-
-// fix look on connect wallet after connecting wallet (wallet.tsx)
-// make them match navbar
-// add form after connecting wallet
-// get contracts to work
-// about page and start page (the form page)
-// make home page overall 
-
-// later
-// add logo
-// add an about page
