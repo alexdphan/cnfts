@@ -116,10 +116,11 @@ export const WalletSection = () => {
 
     return (
       <button
-        className="rounded-lg bg-purple-700 w-full hover:bg-purple-600 inline-flex justify-center items-center py-2.5 font-medium text-white"
+        // className="rounded-lg bg-purple-700 w-full hover:bg-purple-600 inline-flex justify-center items-center py-2.5 font-medium text-white"
+        className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         onClick={onClick}
       >
-        <buttonData.icon className="flex-shrink-0 w-5 h-5 mr-2 text-white" />
+        <buttonData.icon className="w-5 h-5 mr-2 -ml-1" />
         {buttonData.title}
       </button>
     );
@@ -127,7 +128,7 @@ export const WalletSection = () => {
 
   return (
     <div className="flex w-full mr-auto">
-      <div className="grid w-full h-full grid-cols-1 gap-4 border rounded-lg lg:grid-cols-3 border-black/10 dark:border-white/10 md:grid-cols-2">
+      <div className="">
         {_renderConnectButton}
         {address ? <Address>{address}</Address> : <></>}
         <div>
@@ -145,12 +146,3 @@ export const WalletSection = () => {
   );
 };
 
-//  <div className="grid grid-cols-1 gap-4">
-//       {chainName && (
-//         <div className="mb-4">
-//           <ChainCard
-//             prettyName={chain?.label || chainName}
-//             icon={chain?.icon}
-//           />
-//         </div>
-//       )}

@@ -12,6 +12,7 @@ module.exports = {
           bg: "#1A202C",
           lightbg: "#2D3748",
         },
+        clight: "#F8F3FF",
         primary: {
           50: "#e5e7f9",
           100: "#bec4ef",
