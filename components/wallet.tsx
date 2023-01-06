@@ -126,6 +126,7 @@ export const WalletSection = () => {
     );
   }, [onClickConnect, onClickOpenView, walletStatus]);
 
+  // fix ui here on after connecting wallet
   return (
     <div className="flex w-full mr-auto">
       <div className="">

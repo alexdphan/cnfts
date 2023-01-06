@@ -75,11 +75,16 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
 
 export default CreateCosmosApp;
 
-// make home page
-// enter button
-// move wallet to navbar, connect wallet button
+// enter button // done
+// move wallet to navbar, connect wallet button // done 
+// make them switch work // done
+
+// fix look on connect wallet after connecting wallet (wallet.tsx)
+// make them match navbar
 // add form after connecting wallet
 // get contracts to work
+// about page and start page (the form page)
+// make home page overall 
 
 // later
 // add logo
