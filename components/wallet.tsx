@@ -117,7 +117,7 @@ export const WalletSection = () => {
     return (
       <button
         // className="rounded-lg bg-purple-700 w-full hover:bg-purple-600 inline-flex justify-center items-center py-2.5 font-medium text-white"
-        className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white bg-indigo-600 border border-transparent rounded-md shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+        className="relative inline-flex items-center px-4 py-2 text-sm font-medium text-white border border-transparent rounded-md shadow-sm bg-primary-600 hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
         onClick={onClick}
       >
         <buttonData.icon className="w-5 h-5 mr-2 -ml-1" />

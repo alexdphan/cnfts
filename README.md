@@ -30,7 +30,9 @@ Code built with the help of these related projects:
 - [ ] Fix look on connect wallet after connecting wallet (wallet.tsx)
 - [ ] Add form after connecting wallet
 - [ ] Get contracts to work
-- [ ] About page and start page (the form page)
+- [ ] About page and start page (the form page) Using a CNFT minter, we focus on scaling blockchain technology, innovation, security for long-term value and consumer growth.
 - [ ] Make home page overall 
-- [ ] Add logo
-- [ ] Add an about page
+- [ ] Add logo(s) (home page + companies)
+- [ ] Add an about page (learn more button)
+- [ ] Make a popup that shows to connect wallet (after filling form)
+- [ ] Make images of companies below builf featuring section
