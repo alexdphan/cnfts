@@ -36,9 +36,9 @@ const courier = Quantico({
 
 function CreateCosmosApp({ Component, pageProps }: AppProps) {
   const signerOptions: SignerOptions = {
-    signingStargate: (_chain: Chain) => {
-      return getSigningCosmosClientOptions();
-    },
+    // signingStargate: (_chain: Chain) => {
+    //   return getSigningCosmosClientOptions();
+    // },
     signingCosmwasm: (chain: Chain) => {
       switch (chain.chain_name) {
         case 'cosmwasmtestnet':
