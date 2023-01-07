@@ -67,8 +67,8 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
           >
             {/* Navbar needs to be inside wallet and theme provider for it to work */}
             <ThemeProvider>
+              <Navbar />
               <MouseFollow>
-                <Navbar />
                 <Component {...pageProps} />
               </MouseFollow>
             </ThemeProvider>

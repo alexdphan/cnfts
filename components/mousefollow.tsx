@@ -1,5 +1,6 @@
 import 'xtendui/src/mousefollow';
 import 'xtendui';
+import React from 'react';
 
 function MouseFollow({ children }: { children: React.ReactNode }) {
   return (
@@ -7,6 +8,7 @@ function MouseFollow({ children }: { children: React.ReactNode }) {
       className="min-h-screen text-black bg-clight dark:bg-black dark:text-white "
       data-xt-mousefollow
     >
+      {/* problem getting error here */}
       <span
         className="fixed xt-mousefollow xt-loader group"
         data-xt-mousefollow-target

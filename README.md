@@ -36,3 +36,4 @@ Code built with the help of these related projects:
 - [ ] Add an about page (learn more button)
 - [ ] Make a popup that shows to connect wallet (after filling form)
 - [ ] Make images of companies below builf featuring section
+- [ ] Fix home error
