@@ -24,11 +24,12 @@ Code built with the help of these related projects:
 
 ## Tasks
 
-- [ ] Enter Button
+- [X] Enter Button
 - [x] Wallet to navbar, connect wallet button
 - [x] Me the switch theme work
-- [ ] Fix look on connect wallet after connecting wallet (wallet.tsx)
-- [ ] Add form after connecting wallet
+- [X] Fix look on connect wallet after connecting wallet (wallet.tsx)
+- [X] Add form after connecting wallet 
+- [ ] Cleanup form page
 - [ ] Get contracts to work
 - [ ] About page and start page (the form page) Using a CNFT minter, we focus on scaling blockchain technology, innovation, security for long-term value and consumer growth.
 - [ ] Make home page overall 
@@ -36,4 +37,4 @@ Code built with the help of these related projects:
 - [ ] Add an about page (learn more button)
 - [ ] Make a popup that shows to connect wallet (after filling form)
 - [ ] Make images of companies below builf featuring section
-- [ ] Fix home error
+- [X] Fix home error
