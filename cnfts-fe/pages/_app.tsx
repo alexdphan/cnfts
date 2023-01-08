@@ -1,7 +1,12 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { WalletProvider } from '@cosmos-kit/react';
-import { ChakraProvider, Box, useColorModeValue, useColorMode } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  Box,
+  useColorModeValue,
+  useColorMode,
+} from '@chakra-ui/react';
 import { defaultTheme, chainName } from '../config';
 import { wallets } from '@cosmos-kit/keplr';
 
@@ -18,10 +23,7 @@ const courier = Quantico({
   weight: ['400'],
 });
 
-
 function CreateCosmosApp({ Component, pageProps }: AppProps) {
-  
-
   const signerOptions: SignerOptions = {
     signingCosmwasm: (chain: Chain) => {
       switch (chain.chain_name) {
@@ -38,7 +40,7 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
       <div>
         <Box>
           <main className={courier.className}>
-            <ChakraProvider >
+            <ChakraProvider>
               <WalletProvider
                 chains={chains}
                 assetLists={assets}
@@ -63,3 +65,5 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
 }
 
 export default CreateCosmosApp;
+
+// shit
