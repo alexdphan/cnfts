@@ -1,8 +1,5 @@
-**./node_modules
-**./next 
-**./DS_Store
-cnfts-fe/.next/**
-**.pack
+**/node_modules
+**.DS_Store
 # path to next build output
 cnfts-fe/.next/**
 # nice
