@@ -5,7 +5,6 @@ import { wallets as keplrWallets } from '@cosmos-kit/keplr';
 import { wallets as cosmostationWallets } from '@cosmos-kit/cosmostation';
 import { wallets as leapWallets } from '@cosmos-kit/leap';
 
-import { TailwindModal } from '../components';
 import { ThemeProvider } from '../contexts/theme';
 
 import { SignerOptions } from '@cosmos-kit/core';
@@ -58,7 +57,6 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
             assetLists={assets}
             wallets={[...keplrWallets, ...cosmostationWallets, ...leapWallets]}
             signerOptions={signerOptions}
-            walletModal={TailwindModal}
             endpointOptions={{
               cosmwasmtestnet: {
                 rpc: ['https://rpc.malaga-420.cosmwasm.com/'],
