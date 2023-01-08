@@ -18,9 +18,9 @@ export default function Home() {
         >
           <span className="text-xs bg-primary-600 rounded-full text-white px-4 py-1.5 mr-3">
             New
-          </span>{' '}
+          </span>
           <span className="text-sm font-medium">
-            Project from Modular Fellows! See what's up
+            Project from Modular Fellows! See what is up
           </span>
           <svg
             className="w-5 h-5 ml-2"
@@ -41,7 +41,7 @@ export default function Home() {
         <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 xl:px-48 dark:text-gray-400">
           Welcome! ~ This is a CNFT minter ~ Enter the app to mint!
           <br />
-          Simply add your assets link, name, and description, then press "Mint"
+          Simply add your assets link, name, and description, then press the Mint button
         </p>
         <div className="flex flex-col mb-8 space-y-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <a
@@ -85,8 +85,7 @@ export default function Home() {
             <a
               href="#"
               className="mb-5 mr-5 overflow-hidden lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 "
-            >
-            </a>
+            ></a>
             <a
               href="#"
               className="mb-5 mr-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
