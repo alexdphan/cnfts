@@ -6,8 +6,12 @@ import {
   Box,
   useColorModeValue,
   useColorMode,
+  color,
+  Flex,
 } from '@chakra-ui/react';
-import { defaultTheme, chainName } from '../config';
+// import { defaultTheme, chainName } from '../config';
+import { chainName } from '../config';
+import theme from '../config/theme';
 import { wallets } from '@cosmos-kit/keplr';
 
 import { SignerOptions } from '@cosmos-kit/core';
@@ -35,31 +39,32 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
     },
   };
 
+  const { colorMode } = useColorMode();
+  const bgColor = { light: 'green', dark: 'gray.900' };
+
   return (
     <>
-      <div>
-        <Box>
-          <main className={courier.className}>
-            <ChakraProvider>
-              <WalletProvider
-                chains={chains}
-                assetLists={assets}
-                wallets={wallets}
-                // signerOptions={signerOptions}
-                endpointOptions={{
-                  cosmwasmtestnet: {
-                    rpc: ['https://rpc.malaga-420.cosmwasm.com/'],
-                    rest: ['https://api.malaga-420.cosmwasm.com'],
-                  },
-                }}
-              >
-                <Navbar />
-                <Component {...pageProps} />
-              </WalletProvider>
-            </ChakraProvider>
-          </main>
-        </Box>
-      </div>
+      <Box>
+        <main className={courier.className}>
+          <ChakraProvider theme={theme}>
+            <WalletProvider
+              chains={chains}
+              assetLists={assets}
+              wallets={wallets}
+              // signerOptions={signerOptions}
+              endpointOptions={{
+                cosmwasmtestnet: {
+                  rpc: ['https://rpc.malaga-420.cosmwasm.com/'],
+                  rest: ['https://api.malaga-420.cosmwasm.com'],
+                },
+              }}
+            >
+              <Navbar />
+              <Component {...pageProps} />
+            </WalletProvider>
+          </ChakraProvider>
+        </main>
+      </Box>
     </>
   );
 }
