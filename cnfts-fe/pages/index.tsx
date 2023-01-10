@@ -7,6 +7,7 @@ import { cosmWasmTypes } from '@cosmjs/cosmwasm-stargate';
 import { CosmwasmIcon } from '../assets/cosmwasmIcon';
 import { CosmosIcon } from '../assets/cosmosIcon';
 import { CelestiaIcon } from '../assets/celestiaIcon';
+import { GithubIcon } from '../assets/githubIcon';
 
 export default function Home() {
   return (
@@ -45,7 +46,6 @@ export default function Home() {
           Simply add your assets link, name, and description, then press the
           Mint button
         </p>
-
         <div className="flex flex-col mb-8 space-y-4 lg:mb-16 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
           <a
             href="/about"
@@ -96,27 +96,34 @@ export default function Home() {
               className="mb-5 mr-5 overflow-hidden lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400 "
             ></a>
             <a
-              href="#"
+              href="https://cosmwasm.com/"
               className="mb-5 mr-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
               <CosmwasmIcon />
             </a>
             <a
-              href="#"
+              href="https://celestia.org/"
               className="mb-5 mr-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
               <CelestiaIcon />
             </a>
             <a
-              href="#"
+              href="https://cosmos.network/"
               className="mb-5 mr-5 lg:mb-0 hover:text-gray-800 dark:hover:text-gray-400"
             >
               <CosmosIcon />
             </a>
           </div>
-          <div className="mt-10">
+          <div className="m-10 text-sm">
             <a href="https://alexdphan.com/">
-              <p>Built by @alexdphan</p>
+              <p className="m-5 hover:text-primary-500">Built by @alexdphan</p>
+            </a>
+            <a
+              href="https://github.com/alexdphan/cnfts-fe"
+              className="inline-flex flex-col items-center hover:text-primary-500"
+            >
+              <p className="m-3">Github Repo</p>
+              <GithubIcon />
             </a>
           </div>
         </div>

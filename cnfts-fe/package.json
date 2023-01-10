@@ -25,6 +25,7 @@
     "@next/font": "^13.1.1",
     "chain-registry": "1.6.0",
     "framer-motion": "7.6.12",
+    "iconoir-react": "^6.0.0",
     "next": "^13.1.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

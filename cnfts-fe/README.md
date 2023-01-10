@@ -29,12 +29,13 @@ Code built with the help of these related projects:
 - [x] Me the switch theme work
 - [X] Fix look on connect wallet after connecting wallet (wallet.tsx)
 - [X] Add form after connecting wallet 
-- [ ] Cleanup form page
+- [X] Cleanup form page
 - [ ] Get contracts to work
 - [ ] About page and start page (the form page) Using a CNFT minter, we focus on scaling blockchain technology, innovation, security for long-term value and consumer growth.
-- [ ] Make home page overall 
-- [ ] Add logo(s) (home page + companies)
+- [X] Make home page overall 
+- [X] Add logo(s) (home page + companies)
 - [ ] Add an about page (learn more button)
 - [ ] Make a popup that shows to connect wallet (after filling form)
-- [ ] Make images of companies below builf featuring section
+- [X] Make images of companies below build featuring section
 - [X] Fix home error
+- [ ] Cleanup theme
