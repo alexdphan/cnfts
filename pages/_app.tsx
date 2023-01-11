@@ -14,7 +14,8 @@ import { getSigningCosmosClientOptions } from 'osmojs';
 import { Quantico } from '@next/font/google';
 import Navbar from '../components/navbar';
 
-import { localosmosis, localosmosisAssets } from '../config/localosmosis';
+// import { localosmosis, localosmosisAssets } from '../config/localosmosis';
+import { celeswasm, celeswasmAssets } from '../config/celeswasm';
 // import { assets, chains } from 'chain-registry';
 
 const courier = Quantico({
@@ -29,9 +30,9 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
     },
     signingCosmwasm: (chain: Chain) => {
       switch (chain.chain_name) {
-        case 'localosmosis':
+        case 'celeswasm':
           return {
-            gasPrice: GasPrice.fromString('0.0025uosmo'),
+            gasPrice: GasPrice.fromString('0.0025uwasm'),
           };
       }
     },
@@ -46,8 +47,10 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
         <main className={courier.className}>
           <ChakraProvider theme={theme}>
             <WalletProvider
-              chains={[...chains, localosmosis]}
-              assetLists={[...assets, localosmosisAssets]}
+              // chains={[...chains, localosmosis]}
+              // assetLists={[...assets, localosmosisAssets]}
+              chains={[...chains, celeswasm]}
+              assetLists={[...assets, celeswasmAssets]}
               wallets={wallets}
               signerOptions={signerOptions}
               endpointOptions={{
