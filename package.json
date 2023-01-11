@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "codegen": "node scripts/codegen.js"
+    "codegen": "node scripts/codegen.js",
+    "upload_contract": "ts-node ./scripts/upload_contract.ts"
   },
   "dependencies": {
     "@chakra-ui/icons": "2.0.12",
@@ -26,6 +27,7 @@
     "@next/font": "^13.1.1",
     "@tanstack/react-query": "^4.22.0",
     "chain-registry": "1.6.0",
+    "cosmwasm": "^1.1.1",
     "framer-motion": "7.6.12",
     "iconoir-react": "^6.0.0",
     "next": "^13.1.1",
