@@ -32,6 +32,7 @@ Code built with the help of these related projects:
 - [X] Cleanup form page
 - [ ] Get contracts to work
 - [ ] About page and start page (the form page) Using a CNFT minter, we focus on scaling blockchain technology, innovation, security for long-term value and consumer growth.
+- [ ] Add celeswasm chain
 - [X] Make home page overall 
 - [X] Add logo(s) (home page + companies)
 - [ ] Add an about page (learn more button)
