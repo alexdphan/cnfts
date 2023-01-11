@@ -44,15 +44,15 @@ export const localosmosis: Chain = {
     },
   },
   apis: {
-    rpc: [
+       rpc: [
       {
-        address: 'http://localhost:3535',
-      },
+        address: 'http://47.242.123.146:26657',
+      }
     ],
     rest: [
       {
-        address: 'http://localhost:35357',
-      },
+        address: 'http://47.242.123.146:1317'
+      }
     ],
     grpc: [],
   },

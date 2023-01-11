@@ -6,7 +6,7 @@ export const celeswasm: Chain = {
   status: 'live',
   network_type: 'testnet',
   pretty_name: 'Celeswasm Localnet',
-  chain_id: 'celeswasm',
+  chain_id: 'mocha',
   bech32_prefix: 'wasm',
   daemon_name: 'wasmd',
   node_home: '$HOME/.wasmd',
@@ -30,6 +30,8 @@ export const celeswasm: Chain = {
       },
     ],
   },
+
+ 
   // codebase: {
   //   git_repo: 'https://github.com/osmosis-labs/osmosis',
   //   recommended_version: 'v11.0.0',
@@ -51,14 +53,14 @@ export const celeswasm: Chain = {
     ],
     rest: [
       {
-        address: 'https://api-mocha.pops.one/',
-      },
-    ],
-    grpc: [
-      {
         address: 'http://localhost:26659',
       },
     ],
+    // grpc: [
+    //   {
+    //     address: 'http://localhost:26659',
+    //   },
+    // ],
   },
   // logo_URIs: {
   //   png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmosis-chain-logo.png',

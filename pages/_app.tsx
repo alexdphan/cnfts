@@ -14,8 +14,8 @@ import { getSigningCosmosClientOptions } from 'osmojs';
 import { Quantico } from '@next/font/google';
 import Navbar from '../components/navbar';
 
-// import { localosmosis, localosmosisAssets } from '../config/localosmosis';
-import { celeswasm, celeswasmAssets } from '../config/celeswasm';
+import { localosmosis, localosmosisAssets } from '../config/localosmosis';
+// import { celeswasm, celeswasmAssets } from '../config/celeswasm';
 // import { assets, chains } from 'chain-registry';
 
 const courier = Quantico({
@@ -30,9 +30,13 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
     },
     signingCosmwasm: (chain: Chain) => {
       switch (chain.chain_name) {
-        case 'celeswasm':
+        // case 'celeswasm':
+        //   return {
+        //     gasPrice: GasPrice.fromString('0.0025uwasm'),
+        //   };
+        case 'localosmosis':
           return {
-            gasPrice: GasPrice.fromString('0.0025uwasm'),
+    gasPrice: GasPrice.fromString('0.0025uosmo'),
           };
       }
     },
@@ -47,18 +51,20 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
         <main className={courier.className}>
           <ChakraProvider theme={theme}>
             <WalletProvider
-              // chains={[...chains, localosmosis]}
-              // assetLists={[...assets, localosmosisAssets]}
-              chains={[...chains, celeswasm]}
-              assetLists={[...assets, celeswasmAssets]}
+              chains={[...chains, localosmosis]}
+              assetLists={[...assets, localosmosisAssets]}
+              // chains={[...chains, celeswasm]}
+              // assetLists={[...assets, celeswasmAssets]}
               wallets={wallets}
               signerOptions={signerOptions}
               endpointOptions={{
                 // celeswasm: {
-                //   rpc: ['http://127.0.0.1:26657'],
+                //   rpc: ['https://rpc-mocha.pops.one/'],
+                //   rest: ['http://localhost:26659']
                 // },
-                localosmosis: {
-                  rpc: ['http://localhost:343434'],
+                   localosmosis: {
+                  rpc: ['http://47.242.123.146:26657'],
+                     rest: ['http://47.242.123.146:1317']
                 },
               }}
             >
