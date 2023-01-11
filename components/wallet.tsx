@@ -134,7 +134,7 @@ export const WalletSection = () => {
     //     )}
     // <GridItem px={6}>
     <div
-      className="flex flex-row justify-center align-center space-x-4"
+      className="flex flex-row justify-center space-x-4 align-center"
       //   justifyContent="center"
       //   alignItems="center"
       //   borderRadius="lg"

@@ -1,26 +1,21 @@
 import '../styles/globals.css';
 import type { AppProps } from 'next/app';
 import { WalletProvider } from '@cosmos-kit/react';
-import {
-  ChakraProvider,
-  Box,
-  useColorModeValue,
-  useColorMode,
-  color,
-  Flex,
-} from '@chakra-ui/react';
-// import { defaultTheme, chainName } from '../config';
-import { chainName } from '../config';
+import { ChakraProvider, Box, useColorMode } from '@chakra-ui/react';
 import theme from '../config/theme';
 import { wallets } from '@cosmos-kit/keplr';
 
 import { SignerOptions } from '@cosmos-kit/core';
 import { chains, assets } from 'chain-registry';
-import { Chain } from '@chain-registry/types';
+import { Chain, AssetList } from '@chain-registry/types';
 import { GasPrice } from '@cosmjs/stargate';
+import { getSigningCosmosClientOptions } from 'osmojs';
 
 import { Quantico } from '@next/font/google';
 import Navbar from '../components/navbar';
+
+import { localosmosis, localosmosisAssets } from '../config/localosmosis';
+// import { assets, chains } from 'chain-registry';
 
 const courier = Quantico({
   subsets: ['latin'],
@@ -29,11 +24,14 @@ const courier = Quantico({
 
 function CreateCosmosApp({ Component, pageProps }: AppProps) {
   const signerOptions: SignerOptions = {
+    stargate: (_chain: Chain) => {
+      return getSigningCosmosClientOptions();
+    },
     signingCosmwasm: (chain: Chain) => {
       switch (chain.chain_name) {
-        case 'cosmwasmtestnet':
+        case 'localosmosis':
           return {
-            gasPrice: GasPrice.fromString('0.0025umlga'),
+            gasPrice: GasPrice.fromString('0.0025uosmo'),
           };
       }
     },
@@ -48,14 +46,16 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
         <main className={courier.className}>
           <ChakraProvider theme={theme}>
             <WalletProvider
-              chains={chains}
-              assetLists={assets}
+              chains={[...chains, localosmosis]}
+              assetLists={[...assets, localosmosisAssets]}
               wallets={wallets}
-              // signerOptions={signerOptions}
+              signerOptions={signerOptions}
               endpointOptions={{
-                cosmwasmtestnet: {
-                  rpc: ['https://rpc.malaga-420.cosmwasm.com/'],
-                  rest: ['https://api.malaga-420.cosmwasm.com'],
+                // celeswasm: {
+                //   rpc: ['http://127.0.0.1:26657'],
+                // },
+                localosmosis: {
+                  rpc: ['http://localhost:343434'],
                 },
               }}
             >

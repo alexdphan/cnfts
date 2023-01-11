@@ -58,7 +58,7 @@ export default function Navbar() {
                   <a
                     href="../"
                     className="inline-flex items-center px-1 pt-1 font-medium border-b-2 border-transparent text-md dark:text-neutral-500 hover:border-primary-400 hover:text-gray-400"
-                    color=''
+                    color=""
                   >
                     Home
                   </a>
