@@ -1,4 +1,5 @@
-import { Contract, getMnemonic } from "./helpers/utils";
+
+import { Contract, getMnemonic } from "../scripts/helpers/utils";
 import { connect } from "./helpers/connect";
 import { malagaConfig } from "../scripts/networks";
 import { hitFaucet } from "./helpers/hitFaucet";

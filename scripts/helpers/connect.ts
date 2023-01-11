@@ -29,7 +29,7 @@ export async function connect(mnemonic: string, network: Network) {
     offlineSigner,
     {
       prefix,
-      gasPrice,
+      // gasPrice,
     }
   );
   const balance = await client.getBalance(address, feeToken);
