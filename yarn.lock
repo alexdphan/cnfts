@@ -3317,15 +3317,10 @@
   "resolved" "https://registry.npmjs.org/@types/long/-/long-4.0.2.tgz"
   "version" "4.0.2"
 
-"@types/node@*", "@types/node@18.11.9":
-  "integrity" "sha512-CRpX21/kGdzjOpFsZSkcrXMGIBWMGNIHXXBVFSH+ggkftxg+XYP20TESbh+zFvFj3EQOl5byk0HTRn1IL6hbqg=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.11.9.tgz"
-  "version" "18.11.9"
-
-"@types/node@>=13.7.0":
-  "integrity" "sha512-6T7P5bDkRhqRxrQtwj7vru+bWTpelgtcETAZEUSdq0YISKz8WKdoBukQLYQQ6DFHvU9JRsbFq0JH5C51X2ZdnA=="
-  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.11.16.tgz"
-  "version" "18.11.16"
+"@types/node@*", "@types/node@^18.11.18", "@types/node@>=13.7.0":
+  "integrity" "sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA=="
+  "resolved" "https://registry.npmjs.org/@types/node/-/node-18.11.18.tgz"
+  "version" "18.11.18"
 
 "@types/node@10.12.18":
   "integrity" "sha512-fh+pAqt4xRzPfqA6eh3Z2y6fyZavRIumvjhaCL753+TVkGKGhpPeyrJG2JftD0T9q4GF00KjefsQ+PQNDdWQaQ=="
@@ -6686,18 +6681,7 @@
   "resolved" "https://registry.npmjs.org/toggle-selection/-/toggle-selection-1.0.6.tgz"
   "version" "1.0.6"
 
-"ts-node@^8":
-  "integrity" "sha512-ISJJGgkIpDdBhWVu3jufsWpK3Rzo7bdiIXJjQc0ynKxVOVcg2oIrf2H2cejminGrptVc6q6/uynAHNCuWGbpVA=="
-  "resolved" "https://registry.npmjs.org/ts-node/-/ts-node-8.10.2.tgz"
-  "version" "8.10.2"
-  dependencies:
-    "arg" "^4.1.0"
-    "diff" "^4.0.1"
-    "make-error" "^1.1.1"
-    "source-map-support" "^0.5.17"
-    "yn" "3.1.1"
-
-"ts-node@>=9.0.0":
+"ts-node@^10.9.1", "ts-node@>=9.0.0":
   "integrity" "sha512-NtVysVPkxxrwFGUUxGYhfux8k78pQB3JqYBXlLRZgdGUqTO5wU/UyHop5p70iEbGhB7q5KmiZiU0Y3KlJrScEw=="
   "resolved" "https://registry.npmjs.org/ts-node/-/ts-node-10.9.1.tgz"
   "version" "10.9.1"
@@ -6714,6 +6698,17 @@
     "diff" "^4.0.1"
     "make-error" "^1.1.1"
     "v8-compile-cache-lib" "^3.0.1"
+    "yn" "3.1.1"
+
+"ts-node@^8":
+  "integrity" "sha512-ISJJGgkIpDdBhWVu3jufsWpK3Rzo7bdiIXJjQc0ynKxVOVcg2oIrf2H2cejminGrptVc6q6/uynAHNCuWGbpVA=="
+  "resolved" "https://registry.npmjs.org/ts-node/-/ts-node-8.10.2.tgz"
+  "version" "8.10.2"
+  dependencies:
+    "arg" "^4.1.0"
+    "diff" "^4.0.1"
+    "make-error" "^1.1.1"
+    "source-map-support" "^0.5.17"
     "yn" "3.1.1"
 
 "tsconfig-paths@^3.14.1":

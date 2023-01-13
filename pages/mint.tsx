@@ -13,7 +13,65 @@
   ```
 */
 
+import { SigningCosmWasmClient } from '@cosmjs/cosmwasm-stargate';
+import { useWallet } from '@cosmos-kit/react';
+import { Registry } from 'cosmwasm';
+import { useState, useEffect, SetStateAction } from 'react';
+import { CnftsContractAddress } from '../config/celeswasm';
+import { CnftsClient } from '../ts/Cnfts.client';
+
 export default function Form() {
+  // -- offline signer -- //
+  // const { getCosmWasmClient, address } = useWallet();
+  // getting the signer's address and the CosmWasmClient from @cosmos-kit/react
+  const [cnftsClient, setCnftsClient] = useState<CnftsClient | null>(null);
+  // setting the Cw20QueryClient from imported Cw20.client.ts
+  // const [balance, setBalance] = useState<string | null>(null);
+  // setting the balance of the token from cw20Client.balance()
+    // const balance = balance(CnftsContractAddress);
+
+
+  // contract txhash //
+  const [txHash, setTxHash] = useState<string | undefined>(undefined);
+
+  const walletManager = useWallet();
+  const { getSigningStargateClient, getSigningCosmWasmClient, address } =
+    walletManager;
+
+  // -- CnftsClient -- //
+
+  useEffect(() => {
+    // getCosmWasmClient comes from the above const useWallet()
+    getSigningCosmWasmClient().then((cosmWasmClient) => {
+      if (!cosmWasmClient || !address) {
+        console.error('No cosmwasm client or address');
+        return;
+      }
+      const newClient = new CnftsClient(
+        cosmWasmClient,
+        address,
+        CnftsContractAddress
+      );
+      setCnftsClient(newClient);
+    });
+  }, [address, setCnftsClient]);
+
+  const mint = async () => {
+    if (!cnftsClient) {
+      console.error('No cw20 client');
+      return;
+    }
+    const res = await cnftsClient.mint({
+      owner: 'wasm1k3xsettvly8ekr0apte78katuwqjj9gvgrg76d',
+      tokenId: 'Entity1',
+      tokenUri:
+        'https://ipfs.io/ipfs/QmU9aJPc8mACk1zJoPuvGpqVE6TCDnHSMHwAXGmgEdbiNb?filename=celestia.png',
+    });
+    console.log(res);
+
+    setTxHash(res.transactionHash);
+  };
+
   return (
     <div className="p-20">
       <div>
@@ -143,9 +201,11 @@ export default function Form() {
               <button
                 type="submit"
                 className="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+                onClick={mint}
               >
                 Mint
               </button>
+              <p>{txHash}</p>
             </form>
           </div>
         </div>

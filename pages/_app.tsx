@@ -6,7 +6,7 @@ import theme from '../config/theme';
 import { wallets } from '@cosmos-kit/keplr';
 
 import { SignerOptions } from '@cosmos-kit/core';
-import { chains, assets } from 'chain-registry';
+// import { chains, assets } from 'chain-registry';
 import { Chain, AssetList } from '@chain-registry/types';
 import { GasPrice } from '@cosmjs/stargate';
 import { getSigningCosmosClientOptions } from 'osmojs';
@@ -14,10 +14,7 @@ import { getSigningCosmosClientOptions } from 'osmojs';
 import { Quantico } from '@next/font/google';
 import Navbar from '../components/navbar';
 
-import { localosmosis, localosmosisAssets } from '../config/localosmosis';
-// import { celeswasm, celeswasmAssets } from '../config/celeswasm';
-// import { assets, chains } from 'chain-registry';
-
+import { celeswasm, celeswasmAssets } from '../config/celeswasm';
 const courier = Quantico({
   subsets: ['latin'],
   weight: ['400'],
@@ -30,13 +27,9 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
     },
     signingCosmwasm: (chain: Chain) => {
       switch (chain.chain_name) {
-        // case 'celeswasm':
-        //   return {
-        //     gasPrice: GasPrice.fromString('0.0025uwasm'),
-        //   };
-        case 'localosmosis':
+        case 'celeswasm':
           return {
-    gasPrice: GasPrice.fromString('0.0025uosmo'),
+            gasPrice: GasPrice.fromString('0.0025uwasm'),
           };
       }
     },
@@ -51,20 +44,14 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
         <main className={courier.className}>
           <ChakraProvider theme={theme}>
             <WalletProvider
-              chains={[...chains, localosmosis]}
-              assetLists={[...assets, localosmosisAssets]}
-              // chains={[...chains, celeswasm]}
-              // assetLists={[...assets, celeswasmAssets]}
+              chains={[celeswasm]}
+              assetLists={[celeswasmAssets]}
               wallets={wallets}
               signerOptions={signerOptions}
               endpointOptions={{
-                // celeswasm: {
-                //   rpc: ['https://rpc-mocha.pops.one/'],
-                //   rest: ['http://localhost:26659']
-                // },
-                   localosmosis: {
-                  rpc: ['http://47.242.123.146:26657'],
-                     rest: ['http://47.242.123.146:1317']
+                celeswasm: {
+                  rpc: ['https://rpc-mocha.pops.one/'],
+                  // rest: ['http://localhost:26659']
                 },
               }}
             >

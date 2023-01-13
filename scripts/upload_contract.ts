@@ -1,16 +1,16 @@
-
-import { Contract, getMnemonic } from "../scripts/helpers/utils";
+import { Contract, getMnemonic } from "./helpers/utils";
 import { connect } from "./helpers/connect";
-import { malagaConfig } from "../scripts/networks";
+import { celeswasmConfig } from "../scripts/networks";
 import { hitFaucet } from "./helpers/hitFaucet";
 import { uploadContracts } from "./helpers/uploadContracts";
 import { initToken } from "./helpers/initToken";
 import { Metadata } from "osmojs/types/codegen/cosmos/bank/v1beta1/bank";
+// import { celeswasm } from "../config/celeswasm";
 
 const contracts: Contract[] = [
   {
-    name: "Cnft",
-    wasmFile: "./contracts/cw721_metadata.wasm",
+    name: 'Cnft',
+    wasmFile: 'contracts/cw721_metadata_onchain.wasm',
   },
 ];
 // returns the uploaded contract code id for the given contract name from the uploadContracts function in uploadContracts.ts to instantiate the contract
@@ -25,13 +25,13 @@ async function main(): Promise<void> {
   const mnemonic = getMnemonic();
 
   // -- Get a signing client -- //
-  const { client, address } = await connect(mnemonic, malagaConfig);
+  const { client, address } = await connect(mnemonic, celeswasmConfig);
   // connects to offlineSigner component (connect.ts)
   // takes your mnemonic and creates an offline signer out of it
   // connects offline signer to cosmwasm client (Initializing SigningCosmWasmClient)
 
   // -- Check if given wallet has enough balance -- //
-  const { amount } = await client.getBalance(address, malagaConfig.feeToken);
+  const { amount } = await client.getBalance(address, celeswasmConfig.feeToken);
   // checks if you have enough balance to pay for the transaction fees
   if (amount === "0") {
     // if not, have a warning and hit the faucet -- //
@@ -43,9 +43,9 @@ async function main(): Promise<void> {
     // create a new faucet client from cosmwasm npm package and calls the method credit on it
 
     // -- Check if faucet has enough balance again -- //
-    let { amount } = await client.getBalance(address, malagaConfig.feeToken);
+    let { amount } = await client.getBalance(address, celeswasmConfig.feeToken);
     console.log(
-      'New balance of ${address} is ${amount}, the fee token is ${malagaConfig.feeToken}'
+      'New balance of ${address} is ${amount}, the fee token is ${celeswasmConfig.feeToken}'
     );
   }
 

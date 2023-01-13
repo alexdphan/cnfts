@@ -76,7 +76,11 @@ export interface CnftsInterface {
     msg: Empty;
   }, fee?: number | StdFee | "auto", memo?: string, funds?: Coin[]) => Promise<ExecuteResult>;
 }
+// CnftsClient is a client for interacting with the Cnfts contract.
 export class CnftsClient implements CnftsInterface {
+  static mint(arg0: { address: string; }) {
+    throw new Error('Method not implemented.');
+  }
   client: SigningCosmWasmClient;
   sender: string;
   contractAddress: string;

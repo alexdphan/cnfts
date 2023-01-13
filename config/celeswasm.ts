@@ -1,5 +1,18 @@
 import { Chain, AssetList } from '@chain-registry/types';
 
+import { assets } from 'chain-registry';
+
+// export const chainName = 'cosmwasmtestnet';
+// export const stakingDenom = 'umlg';
+// export const feeDenom = 'uand';
+
+export const chainName = 'celeswasm';
+export const stakingDenom = 'uwasm';
+export const feeDenom = 'uwasm';
+
+export const CnftsContractAddress =
+  'wasm1suhgf5svhu4usrurvxzlgn54ksxmn8gljarjtxqnapv8kjnp4nrss5maay';
+
 export const celeswasm: Chain = {
   $schema: '../../chain.schema.json',
   chain_name: 'celeswasm',
