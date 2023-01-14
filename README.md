@@ -33,17 +33,17 @@ cNFTs are an example of how Celestia' Rollmint can allow anyone to design and de
 4. Ensure you have enough funds (which should be known since you ran the bash script (init.sh). Finally, press the mint button. This would burn tokens in return for a cNFT.
 
 5. Enjoy! You now have a Celestia NFT :D
-
+--- 
 ## Credits
 
-Code built with the help of these related projects:
+Frontend code built with the help of these related projects:
 
 * [@cosmwasm/ts-codegen](https://github.com/CosmWasm/ts-codegen) for generated CosmWasm contract Typescript classes
 * [@osmonauts/telescope](https://github.com/osmosis-labs/telescope) a "babel for the Cosmos", Telescope is a TypeScript Transpiler for Cosmos Protobufs.
 * [chain-registry](https://github.com/cosmology-tech/chain-registry) Cosmos chain registry and chain info.
 * [cosmos-kit](https://github.com/cosmology-tech/cosmos-kit) A wallet connector for the Cosmos.
 * [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)  and [Next.js deployment documentation](https://nextjs.org/docs/deployment).
-
+--- 
 ## Tasks
 
 - [X] Enter Button
