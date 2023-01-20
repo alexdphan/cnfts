@@ -21,7 +21,7 @@ export interface Network {
 
 export const celeswasmConfig: Network = {
   chainId: 'celeswasm',
-  rpcEndpoint: 'https://<YOUR_NODE_IP>:26657',
+  rpcEndpoint: 'https://127.0.0.1:26657',
   prefix: 'wasm',
   gasPrice: GasPrice.fromString('0.25uwasm'),
   feeToken: 'uwasm',

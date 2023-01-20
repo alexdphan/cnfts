@@ -60,17 +60,17 @@ export const celeswasm: Chain = {
   apis: {
     rpc: [
       {
-        address: 'https://<YOUR_NODE_IP>:26657',
+        address: 'https://127.0.0.1:26657',
       },
     ],
     rest: [
       {
-        address: 'http://<YOUR_NODE_IP>:1317',
+        address: 'http://127.0.0.1:1317',
       },
     ],
     grpc: [
       {
-        address: 'http://<YOUR_NODE_IP>:9090',
+        address: 'http://127.0.0.1:9090',
       },
     ],
   },
