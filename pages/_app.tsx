@@ -50,8 +50,8 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
               signerOptions={signerOptions}
               endpointOptions={{
                 celeswasm: {
-                  rpc: ['https://rpc-mocha.pops.one/'],
-                  // rest: ['http://localhost:26659']
+                  rpc: ['https://<YOUR_NODE_IP>:26657'],
+                  rest: ['http://<YOUR_NODE_IP>:1317'],
                 },
               }}
             >

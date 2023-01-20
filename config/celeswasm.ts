@@ -1,6 +1,6 @@
 import { Chain, AssetList } from '@chain-registry/types';
 
-import { assets } from 'chain-registry';
+// import { assets } from 'chain-registry';
 
 // export const chainName = 'cosmwasmtestnet';
 // export const stakingDenom = 'umlg';
@@ -19,7 +19,7 @@ export const celeswasm: Chain = {
   status: 'live',
   network_type: 'testnet',
   pretty_name: 'Celeswasm Localnet',
-  chain_id: 'mocha',
+  chain_id: 'celeswasm',
   bech32_prefix: 'wasm',
   daemon_name: 'wasmd',
   node_home: '$HOME/.wasmd',
@@ -44,7 +44,6 @@ export const celeswasm: Chain = {
     ],
   },
 
- 
   // codebase: {
   //   git_repo: 'https://github.com/osmosis-labs/osmosis',
   //   recommended_version: 'v11.0.0',
@@ -61,19 +60,19 @@ export const celeswasm: Chain = {
   apis: {
     rpc: [
       {
-        address: 'https://rpc-mocha.pops.one',
+        address: 'https://<YOUR_NODE_IP>:26657',
       },
     ],
     rest: [
       {
-        address: 'http://localhost:26659',
+        address: 'http://<YOUR_NODE_IP>:1317',
       },
     ],
-    // grpc: [
-    //   {
-    //     address: 'http://localhost:26659',
-    //   },
-    // ],
+    grpc: [
+      {
+        address: 'http://<YOUR_NODE_IP>:9090',
+      },
+    ],
   },
   // logo_URIs: {
   //   png: 'https://raw.githubusercontent.com/cosmos/chain-registry/master/osmosis/images/osmosis-chain-logo.png',

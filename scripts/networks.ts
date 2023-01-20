@@ -20,12 +20,12 @@ export interface Network {
 // };
 
 export const celeswasmConfig: Network = {
-  chainId: 'malaga-420',
-  rpcEndpoint: 'https://rpc.malaga-420.cosmwasm.com/',
+  chainId: 'celeswasm',
+  rpcEndpoint: 'https://<YOUR_NODE_IP>:26657',
   prefix: 'wasm',
-  gasPrice: GasPrice.fromString('0.25umlg'),
-  feeToken: 'umlg',
-  faucetUrl: 'https://faucet.malaga-420.cosmwasm.com/',
+  gasPrice: GasPrice.fromString('0.25uwasm'),
+  feeToken: 'uwasm',
+  faucetUrl: '',
 };
 
 // export const celeswasmConfig: Network = {
