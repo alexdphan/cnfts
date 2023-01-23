@@ -19,14 +19,14 @@ export interface Network {
 //   faucetUrl: ""
 // };
 
-export const celeswasmConfig: Network = {
-  chainId: 'celeswasm',
-  rpcEndpoint: 'https://127.0.0.1:26657',
-  prefix: 'wasm',
-  gasPrice: GasPrice.fromString('0.25uwasm'),
-  feeToken: 'uwasm',
-  faucetUrl: '',
-};
+// export const celeswasmConfig: Network = {
+//   chainId: 'celeswasm',
+//   rpcEndpoint: '${IPADDRESS}:26657',
+//   prefix: 'wasm',
+//   gasPrice: GasPrice.fromString('0.25uwasm'),
+//   feeToken: 'uwasm',
+//   faucetUrl: '',
+// };
 
 // export const celeswasmConfig: Network = {
 //   chainId: 'celeswasm',

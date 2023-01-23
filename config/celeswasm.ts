@@ -60,17 +60,17 @@ export const celeswasm: Chain = {
   apis: {
     rpc: [
       {
-        address: 'https://127.0.0.1:26657',
+        address: '${IPADDRESS}:26657',
       },
     ],
     rest: [
       {
-        address: 'http://127.0.0.1:1317',
+        address: '${IPADDRESS}:1317',
       },
     ],
     grpc: [
       {
-        address: 'http://127.0.0.1:9090',
+        address: '${IPADDRESS}:9090',
       },
     ],
   },

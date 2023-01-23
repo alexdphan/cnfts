@@ -50,8 +50,8 @@ function CreateCosmosApp({ Component, pageProps }: AppProps) {
               signerOptions={signerOptions}
               endpointOptions={{
                 celeswasm: {
-                  rpc: ['https://127.0.0.1:26657'],
-                  rest: ['http://127.0.0.1:1317'],
+                  rpc: ['${IPADDRESS}:26657'],
+                  rest: ['${IPADDRESS}:1317'],
                 },
               }}
             >
